@@ -1,3 +1,36 @@
+# === start new shit ===
+
+### *More details on compiling libreoffice for Lambda*
+
+#### Lambda AMI
+
+The most important detail is getting the correct AMI; the AMI that runs lambda functions. 
+
+- [lambda enviromment](https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html)
+- [lambda AMI](https://console.aws.amazon.com/ec2/v2/home#Images:visibility=public-images;search=amzn-ami-hvm-2017.03.1.20170812-x86_64-gp2)
+
+#### steps:
+- created ec2 `c5.4xlarge` with 30GB of storage using the [Lambda AMI](https://console.aws.amazon.com/ec2/v2/home#Images:visibility=public-images;search=amzn-ami-hvm-2017.03.1.20170812-x86_64-gp2)
+- ssh into the new server
+- generated ssh key, `ssh-keygen` 
+- added the new key to my github account
+- cloned the repo `git clone git@github.com:jbastias/serverless-libreoffice.git`
+- cd serverless-libreoffice
+- **remove** the following options from `./autogen.sh` command in `compile.sh`:
+  - --with-system-expat
+  - --with-system-curl
+  - --with-system-nss
+  - --with-system-openssl
+- `chmod +x compile.sh`
+- `./compile`
+- go for a long walk, followed by a long coffee and then followed by long lunch :P
+
+#### Building Libreoffice
+- [Guide](https://wiki.documentfoundation.org/Development/BuildingOnLinux)
+
+# === end new shit ===
+
+
 # Serverless LibreOffice
 
 [![](https://cdn-images-1.medium.com/max/1600/1*4q_I8VM6Gtmtw6TAjORylA.png)](https://vladholubiev.com/serverless-libreoffice)

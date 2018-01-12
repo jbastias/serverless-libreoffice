@@ -18,17 +18,23 @@ ccache --max-size 16 G && ccache -s
 
 # the most important part. Run ./autogen.sh --help to see wha each option means
 ./autogen.sh --disable-report-builder --disable-lpsolve --disable-coinmp --disable-pdfimport \
-	--enable-mergelibs --disable-odk --disable-gtk --disable-systray --disable-cairo-canvas \
-	--disable-dbus --disable-sdremote --disable-sdremote-bluetooth --disable-gio --disable-randr \
-	--disable-gstreamer-1-0 --disable-cve-tests --disable-cups --disable-extension-update \
-	--disable-postgresql-sdbc --disable-lotuswordpro --disable-firebird-sdbc --disable-scripting-beanshell \
-	--disable-scripting-javascript --disable-largefile --without-helppack-integration \
-	--without-system-dicts --without-java --disable-gtk3 --disable-dconf --disable-gstreamer-0-10 \
-	--disable-firebird-sdbc --without-fonts --without-junit --with-theme="no" --disable-evolution2 \
-	--disable-avahi --without-myspell-dicts --disable-ext-mariadb-connector --with-galleries="no" \
-	--disable-kde4 --with-system-expat --with-system-libxml --with-system-nss \
-	--disable-introspection --without-krb5 --disable-python --disable-pch \
-	--with-system-openssl --with-system-curl --disable-ooenv --disable-dependency-tracking
+        --enable-mergelibs --disable-odk --disable-gtk --disable-systray --disable-cairo-canvas \
+        --disable-dbus --disable-sdremote --disable-sdremote-bluetooth --disable-gio --disable-randr \
+        --disable-gstreamer-1-0 --disable-cve-tests --disable-cups --disable-extension-update \
+        --disable-postgresql-sdbc --disable-lotuswordpro --disable-firebird-sdbc --disable-scripting-beanshell \
+        --disable-scripting-javascript --disable-largefile --without-helppack-integration \
+        --without-system-dicts --without-java --disable-gtk3 --disable-dconf --disable-gstreamer-0-10 \
+        --disable-firebird-sdbc --without-fonts --without-junit --with-theme="no" --disable-evolution2 \
+        --disable-avahi --without-myspell-dicts --disable-ext-mariadb-connector --with-galleries="no" \
+        --disable-kde4 --with-system-libxml \
+        --disable-introspection --without-krb5 --disable-python --disable-pch \
+        --disable-ooenv --disable-dependency-tracking
+
+# THIS OPTIONS WHERE REMOVED BECAUSE THEY CAUSED ERRORS
+# --with-system-expat
+# --with-system-curl
+# --with-system-nss
+# --with-system-openssl
 
 # this will take 0-2 hours to compile, depends on your machine
 make
